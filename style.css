@@ -1,0 +1,458 @@
+/* Vendors */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://pro.fontawesome.com/releases/v5.2.0/css/all.css');
+
+/* Variables */
+:root {
+    --theme: #02AFAF;
+    --theme-lighter: #00bdbd;
+    --container-padding: 20px;
+    --container-width: calc(100% - var(--container-padding) * 2);
+}
+
+/* Resets & Typo */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+/* Container */
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: calc(50% - var(--container-width) / 2);
+    padding-right: calc(50% - var(--container-width) / 2);
+}
+@media only screen and (min-width: 1040px) {
+    :root {
+        --container-width: 1000px;
+    }
+}
+
+/* Wrappers */
+.main-wrapper {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.main-content {
+
+}
+
+.skills-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: var(--theme);
+}
+.skills-content {
+    text-align: center;
+    color: #fff;
+}
+
+.projects-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.projects-content {
+    text-align: center;
+}
+
+.about-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: var(--theme);
+}
+.about-content {
+    text-align: center;
+    color: #fff;
+}
+
+.contact-wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.contact-content {
+    text-align: center;
+}
+
+/* Titles & p */
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.title span {
+    color: var(--theme);
+}
+
+.subtitle {
+    font-size: 2rem;
+}
+
+/* Socials menu */
+.nav {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: flex;
+    align-items: center;
+}
+.nav-item {
+    margin: 0 10px;
+    font-size: 28px;
+    animation: nav-item-hover-out 1s forwards;
+}
+.nav-item:hover {
+    animation: nav-item-hover-in 1s forwards;
+}
+@keyframes nav-item-hover-in {
+    0% {
+        transform: translateY(0);
+    }
+
+    60%,
+    100% {
+        transform: translateY(-6px);
+    }
+}
+@keyframes nav-item-hover-out {
+    0% {
+        transform: translateY(-6px);
+    }
+
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+}
+.nav-link {
+    text-decoration: none;
+    color: var(--theme);
+}
+
+/* Navigation menu */
+.menu {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+.menu-link {
+    display: block;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 2px solid var(--theme);
+    color: var(--theme);
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+}
+.menu-link::after {
+    display: none;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--theme);
+    color: #fff;
+    padding: 5px 10px;
+    animation: menu-link-anim 1s;
+    transform-origin: left;
+}
+.menu-link.a::after {
+    content: "Compétences";
+}
+.menu-link.b::after {
+    content: "Projets";
+}
+.menu-link.c::after {
+    content: "A propos";
+}
+.menu-link.d::after {
+    content: "Contact";
+}
+.menu-link.e::after {
+    content: "Accéder au projet";
+}
+.menu-link.f::after {
+    content: "Télécharger mon CV";
+}
+.menu-link:hover::after {
+    display: block;
+}
+@keyframes menu-link-anim {
+    0% {
+        transform: scaleX(0);
+    }
+
+    20%,
+    100% {
+        transform: scaleX(100%);
+    }
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    border-radius: 12px;
+    margin-top: 50px;
+}
+.skill {
+    padding: 15px;
+    display: block;
+}
+.skill:not(:first-child) {
+    border-left: 3px solid var(--theme-lighter);
+}
+.skill-icon {
+    display: flex;
+    justify-content: center;
+}
+.skill-icon i {
+    background-color: #fff;
+    color: var(--theme);
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    line-height: 0;
+}
+.skill-title {
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+.skill-caption,
+.skill-highlight,
+.skill-text {
+    font-size: 1.2rem;
+}
+.skill-caption {
+    margin: 20px 0;
+}
+.skill-highlight {
+    color: var(--theme);
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.skill-text {
+    margin: 10px 0;
+}
+
+/* Projects */
+.projects {
+    margin-top: 50px;
+}
+.project {
+    text-align: left;
+}
+.project:not(:last-child) {
+    margin-bottom: 50px;
+}
+.project-title {
+    font-size: 1.5rem;
+}
+.project-tags {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+.project-tag {
+    display: inline-block;
+    background-color: var(--theme);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.project-video:hover {
+    animation: project-video-in 1s forwards;
+}
+@keyframes project-video-in {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    40%,
+    100% {
+        transform: perspective(1000px) rotateX(-4deg) rotateY(-1.5deg);
+    }
+}
+
+/* Form */
+.form {
+    text-align: left;
+}
+.form-category {
+    margin: 40px 0;
+}
+.form-label {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.form-radio {
+    display: inline-block;
+    margin-right: 10px;
+}
+.form-radio label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 200px;
+    cursor: pointer;
+}
+.form-radio label::before,
+.form-radio label::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.form-radio label::before {
+    border: 2px solid #000;
+}
+.form-radio label::after {
+    transform-origin: left;
+    border: 2px solid var(--theme);
+    background-color: #fff;
+    color: var(--theme);
+    animation: radio-out 500ms forwards;
+}
+.form-radio label.a::after {
+    content: "Site web";
+}
+.form-radio label.b::after {
+    content: "Autre";
+}
+.form-radio-input {
+    display: none;
+}
+.form-radio-input:checked + label::after {
+    animation: radio-in 500ms forwards;
+}
+@keyframes radio-in {
+    0% {
+        transform: scaleX(0);
+    }
+
+    60%,
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes radio-out {
+    0% {
+        transform: scaleX(1);
+    }
+
+    60%,
+    100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+.form-field {
+    position: relative;
+    margin: 14px 0;
+    padding-top: 15px;
+}
+.form-field-input {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    padding: 4px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 2px solid #2f2f2f;
+    color: #2f2f2f;
+    transition: all 200ms ease-in-out;
+}
+.form-field-input::placeholder {
+    opacity: 0;
+}
+.form-field-input:not(:placeholder-shown),
+.form-field-input:focus{
+    border-bottom: 2px solid var(--theme);
+}
+.form-field label {
+    position: absolute;
+    top: calc(15px + 4px);
+    left: 0;
+    color: #2f2f2f;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 200ms ease-in-out;
+}
+.form-field-input:not(:placeholder-shown) + label,
+.form-field-input:focus + label {
+    font-size: 1rem;
+    top: 0px;
+    color: var(--theme);
+}
+.form-field-input--textarea {}
+
+.form-submit {
+    padding: 10px 14px;
+    outline: 0;
+    border: 0;
+    background-color: var(--theme);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+.form-submit:hover {
+    background-color: var(--theme-lighter);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--theme);
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-nav {
+    position: inherit;
+}
+
+.footer-nav .nav-link {
+    color: #fff;
+}
